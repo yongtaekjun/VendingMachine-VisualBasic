@@ -23,7 +23,6 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.lbBalance = New System.Windows.Forms.Label()
         Me.pbQuater = New System.Windows.Forms.PictureBox()
         Me.pbLoonie = New System.Windows.Forms.PictureBox()
@@ -44,7 +43,6 @@ Partial Class Form1
         Me.btn1 = New System.Windows.Forms.Button()
         Me.tbMessage = New System.Windows.Forms.TextBox()
         Me.lbOrder = New System.Windows.Forms.Label()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbQuater, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbLoonie, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbToonie, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -53,16 +51,6 @@ Partial Class Form1
         CType(Me.pbPenny, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(12, 12)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(336, 520)
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
-        Me.PictureBox1.Visible = False
-        '
         'lbBalance
         '
         Me.lbBalance.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -70,7 +58,7 @@ Partial Class Form1
         Me.lbBalance.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.lbBalance.Font = New System.Drawing.Font("Franklin Gothic Medium", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbBalance.ForeColor = System.Drawing.Color.Yellow
-        Me.lbBalance.Location = New System.Drawing.Point(397, 105)
+        Me.lbBalance.Location = New System.Drawing.Point(479, 105)
         Me.lbBalance.Name = "lbBalance"
         Me.lbBalance.Size = New System.Drawing.Size(109, 32)
         Me.lbBalance.TabIndex = 5
@@ -81,7 +69,7 @@ Partial Class Form1
         '
         Me.pbQuater.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.pbQuater.Image = CType(resources.GetObject("pbQuater.Image"), System.Drawing.Image)
-        Me.pbQuater.Location = New System.Drawing.Point(456, 159)
+        Me.pbQuater.Location = New System.Drawing.Point(530, 159)
         Me.pbQuater.Name = "pbQuater"
         Me.pbQuater.Size = New System.Drawing.Size(45, 46)
         Me.pbQuater.TabIndex = 6
@@ -91,7 +79,7 @@ Partial Class Form1
         '
         Me.pbLoonie.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.pbLoonie.Image = CType(resources.GetObject("pbLoonie.Image"), System.Drawing.Image)
-        Me.pbLoonie.Location = New System.Drawing.Point(405, 159)
+        Me.pbLoonie.Location = New System.Drawing.Point(479, 159)
         Me.pbLoonie.Name = "pbLoonie"
         Me.pbLoonie.Size = New System.Drawing.Size(45, 46)
         Me.pbLoonie.TabIndex = 7
@@ -101,7 +89,7 @@ Partial Class Form1
         '
         Me.pbToonie.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.pbToonie.Image = CType(resources.GetObject("pbToonie.Image"), System.Drawing.Image)
-        Me.pbToonie.Location = New System.Drawing.Point(354, 159)
+        Me.pbToonie.Location = New System.Drawing.Point(428, 159)
         Me.pbToonie.Name = "pbToonie"
         Me.pbToonie.Size = New System.Drawing.Size(45, 46)
         Me.pbToonie.TabIndex = 8
@@ -110,7 +98,7 @@ Partial Class Form1
         'btnStop
         '
         Me.btnStop.BackColor = System.Drawing.Color.Lime
-        Me.btnStop.Location = New System.Drawing.Point(380, 273)
+        Me.btnStop.Location = New System.Drawing.Point(454, 273)
         Me.btnStop.Name = "btnStop"
         Me.btnStop.Size = New System.Drawing.Size(96, 46)
         Me.btnStop.TabIndex = 9
@@ -124,7 +112,7 @@ Partial Class Form1
         Me.lbDollarSign.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.lbDollarSign.Font = New System.Drawing.Font("Franklin Gothic Medium", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbDollarSign.ForeColor = System.Drawing.Color.Yellow
-        Me.lbDollarSign.Location = New System.Drawing.Point(354, 105)
+        Me.lbDollarSign.Location = New System.Drawing.Point(428, 105)
         Me.lbDollarSign.Name = "lbDollarSign"
         Me.lbDollarSign.Size = New System.Drawing.Size(37, 32)
         Me.lbDollarSign.TabIndex = 11
@@ -137,7 +125,7 @@ Partial Class Form1
         Me.lblBalance.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.lblBalance.Font = New System.Drawing.Font("Franklin Gothic Medium", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblBalance.ForeColor = System.Drawing.Color.Yellow
-        Me.lblBalance.Location = New System.Drawing.Point(367, 64)
+        Me.lblBalance.Location = New System.Drawing.Point(441, 64)
         Me.lblBalance.Name = "lblBalance"
         Me.lblBalance.Size = New System.Drawing.Size(120, 32)
         Me.lblBalance.TabIndex = 14
@@ -147,7 +135,7 @@ Partial Class Form1
         '
         Me.pbDime.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.pbDime.Image = CType(resources.GetObject("pbDime.Image"), System.Drawing.Image)
-        Me.pbDime.Location = New System.Drawing.Point(354, 212)
+        Me.pbDime.Location = New System.Drawing.Point(428, 212)
         Me.pbDime.Name = "pbDime"
         Me.pbDime.Size = New System.Drawing.Size(45, 46)
         Me.pbDime.TabIndex = 15
@@ -157,7 +145,7 @@ Partial Class Form1
         '
         Me.pbNickle.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.pbNickle.Image = CType(resources.GetObject("pbNickle.Image"), System.Drawing.Image)
-        Me.pbNickle.Location = New System.Drawing.Point(405, 212)
+        Me.pbNickle.Location = New System.Drawing.Point(479, 212)
         Me.pbNickle.Name = "pbNickle"
         Me.pbNickle.Size = New System.Drawing.Size(45, 46)
         Me.pbNickle.TabIndex = 16
@@ -167,7 +155,7 @@ Partial Class Form1
         '
         Me.pbPenny.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.pbPenny.Image = CType(resources.GetObject("pbPenny.Image"), System.Drawing.Image)
-        Me.pbPenny.Location = New System.Drawing.Point(456, 212)
+        Me.pbPenny.Location = New System.Drawing.Point(530, 212)
         Me.pbPenny.Name = "pbPenny"
         Me.pbPenny.Size = New System.Drawing.Size(45, 46)
         Me.pbPenny.TabIndex = 17
@@ -175,7 +163,7 @@ Partial Class Form1
         '
         'btnA
         '
-        Me.btnA.Location = New System.Drawing.Point(367, 380)
+        Me.btnA.Location = New System.Drawing.Point(441, 380)
         Me.btnA.Name = "btnA"
         Me.btnA.Size = New System.Drawing.Size(24, 23)
         Me.btnA.TabIndex = 18
@@ -184,7 +172,7 @@ Partial Class Form1
         '
         'btnB
         '
-        Me.btnB.Location = New System.Drawing.Point(397, 380)
+        Me.btnB.Location = New System.Drawing.Point(471, 380)
         Me.btnB.Name = "btnB"
         Me.btnB.Size = New System.Drawing.Size(31, 23)
         Me.btnB.TabIndex = 19
@@ -193,7 +181,7 @@ Partial Class Form1
         '
         'btnC
         '
-        Me.btnC.Location = New System.Drawing.Point(434, 380)
+        Me.btnC.Location = New System.Drawing.Point(508, 380)
         Me.btnC.Name = "btnC"
         Me.btnC.Size = New System.Drawing.Size(31, 23)
         Me.btnC.TabIndex = 20
@@ -202,7 +190,7 @@ Partial Class Form1
         '
         'btnD
         '
-        Me.btnD.Location = New System.Drawing.Point(471, 380)
+        Me.btnD.Location = New System.Drawing.Point(545, 380)
         Me.btnD.Name = "btnD"
         Me.btnD.Size = New System.Drawing.Size(31, 23)
         Me.btnD.TabIndex = 21
@@ -211,7 +199,7 @@ Partial Class Form1
         '
         'btn4
         '
-        Me.btn4.Location = New System.Drawing.Point(471, 416)
+        Me.btn4.Location = New System.Drawing.Point(545, 416)
         Me.btn4.Name = "btn4"
         Me.btn4.Size = New System.Drawing.Size(31, 23)
         Me.btn4.TabIndex = 25
@@ -220,7 +208,7 @@ Partial Class Form1
         '
         'btn3
         '
-        Me.btn3.Location = New System.Drawing.Point(434, 416)
+        Me.btn3.Location = New System.Drawing.Point(508, 416)
         Me.btn3.Name = "btn3"
         Me.btn3.Size = New System.Drawing.Size(31, 23)
         Me.btn3.TabIndex = 24
@@ -229,7 +217,7 @@ Partial Class Form1
         '
         'btn2
         '
-        Me.btn2.Location = New System.Drawing.Point(397, 416)
+        Me.btn2.Location = New System.Drawing.Point(471, 416)
         Me.btn2.Name = "btn2"
         Me.btn2.Size = New System.Drawing.Size(31, 23)
         Me.btn2.TabIndex = 23
@@ -238,7 +226,7 @@ Partial Class Form1
         '
         'btn1
         '
-        Me.btn1.Location = New System.Drawing.Point(367, 416)
+        Me.btn1.Location = New System.Drawing.Point(441, 416)
         Me.btn1.Name = "btn1"
         Me.btn1.Size = New System.Drawing.Size(24, 23)
         Me.btn1.TabIndex = 22
@@ -249,12 +237,12 @@ Partial Class Form1
         '
         Me.tbMessage.BackColor = System.Drawing.Color.Lime
         Me.tbMessage.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.tbMessage.Location = New System.Drawing.Point(12, 525)
+        Me.tbMessage.Location = New System.Drawing.Point(94, 595)
         Me.tbMessage.Multiline = True
         Me.tbMessage.Name = "tbMessage"
         Me.tbMessage.ReadOnly = True
         Me.tbMessage.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.tbMessage.Size = New System.Drawing.Size(336, 100)
+        Me.tbMessage.Size = New System.Drawing.Size(512, 158)
         Me.tbMessage.TabIndex = 27
         Me.tbMessage.TabStop = False
         '
@@ -265,7 +253,7 @@ Partial Class Form1
         Me.lbOrder.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.lbOrder.Font = New System.Drawing.Font("Franklin Gothic Medium", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbOrder.ForeColor = System.Drawing.Color.Yellow
-        Me.lbOrder.Location = New System.Drawing.Point(390, 345)
+        Me.lbOrder.Location = New System.Drawing.Point(464, 345)
         Me.lbOrder.Name = "lbOrder"
         Me.lbOrder.Size = New System.Drawing.Size(77, 32)
         Me.lbOrder.TabIndex = 28
@@ -276,7 +264,7 @@ Partial Class Form1
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Navy
-        Me.ClientSize = New System.Drawing.Size(529, 774)
+        Me.ClientSize = New System.Drawing.Size(668, 774)
         Me.Controls.Add(Me.lbOrder)
         Me.Controls.Add(Me.tbMessage)
         Me.Controls.Add(Me.btn4)
@@ -297,10 +285,8 @@ Partial Class Form1
         Me.Controls.Add(Me.pbLoonie)
         Me.Controls.Add(Me.pbQuater)
         Me.Controls.Add(Me.lbBalance)
-        Me.Controls.Add(Me.PictureBox1)
         Me.Name = "Form1"
         Me.Text = "Vending Machine"
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbQuater, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbLoonie, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbToonie, System.ComponentModel.ISupportInitialize).EndInit()
@@ -311,8 +297,6 @@ Partial Class Form1
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents lbBalance As Label
     Friend WithEvents pbQuater As PictureBox
     Friend WithEvents pbLoonie As PictureBox

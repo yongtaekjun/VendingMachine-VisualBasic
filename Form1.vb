@@ -4,8 +4,7 @@
     Public sOrderCode As String = ""
     Public OrderHistory As New List(Of Order)
     Public Items As New List(Of Item)
-    Public Items2(4, 4) As Item
-    Public lbItems(4, 4) As Label
+    Public Items2(3, 3) As Item
 
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -34,23 +33,29 @@
             For j As UInt16 = 0 To 3 Step 1
                 Select Case i
                     Case 0
-                        Items2(i, j) = New Item("A" & j + 1, "Item " & i & j, 1.25)
+                        Items2(i, j) = New Item("A" & j + 1, "Item " & "A" & j + 1, 1.25)
                     Case 1
-                        Items2(i, j) = New Item("B" & j + 1, "Item " & i & j, 1.5)
+                        Items2(i, j) = New Item("B" & j + 1, "Item " & "B" & j + 1, 1.5)
                     Case 2
-                        Items2(i, j) = New Item("C" & j + 1, "Item " & i & j, 2.25)
+                        Items2(i, j) = New Item("C" & j + 1, "Item " & "C" & j + 1, 2.25)
                     Case 3
-                        Items2(i, j) = New Item("D" & j + 1, "Item " & i & j, 1.75)
+                        Items2(i, j) = New Item("D" & j + 1, "Item " & "D" & j + 1, 1.75)
                 End Select
                 Items2(i, j).lbDescription.Name = "lb" & i & j
-                Items2(i, j).Sold(0)
-                Items2(i, j).lbDescription.Size = New Size(60, 20)
+                Items2(i, j).lbDescription.Size = New Size(70, 20)
+                Items2(i, j).lbDescription.TextAlign = ContentAlignment.MiddleRight
                 Items2(i, j).lbDescription.BackColor = Color.Yellow
-                'Items2(i, j).lbDescription.Visible = True
-                'Items2(i, j).lbDescription.BringToFront()
+                Items2(i, j).Sold(0)
+                Items2(i, j).lbDescription.Location = New Point(5 + 70 * i, 150 + 100 * j)
 
-                Items2(i, j).lbDescription.Location = New Point(10 + 65 * i, 80 + 90 * j)
+                Dim FileName As String = "../../images/" & Items2(i, j).Code & ".png"
+                Items2(i, j).pbImage.Name = "pb" & i & j
+                Items2(i, j).pbImage.Image = Image.FromFile(FileName)
+                Items2(i, j).pbImage.Size = New Size(70, 100)
+                Items2(i, j).pbImage.Location = New Point(15 + 70 * i, 85 + 100 * j)
+
                 Me.Controls.Add(Items2(i, j).lbDescription)
+                Me.Controls.Add(Items2(i, j).pbImage)
 
             Next
         Next
@@ -162,7 +167,6 @@
 
         ' Input order code has two character
         Dim OrderedItem As Order = New Order
-        Dim isCorrectOrder As Boolean = False
         Dim TransactionStatus As TransactionCode = TransactionCode.Processing
 
         For i As UInt16 = 0 To 3 Step 1

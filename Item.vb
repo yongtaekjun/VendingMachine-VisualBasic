@@ -21,6 +21,7 @@
     End Sub
     Public Sub Sold(ByVal amount As Int16)
         Me.Amount += amount
-        Me.lbDescription.Text = Me.Code & " $" & Me.Price & " : " & Me.Amount
+        'Me.lbDescription.Text = Me.Code & " $" & Me.Price & " : " & Me.Amount
+        Me.lbDescription.Text = Me.Code & " : " & Me.Amount
     End Sub
 End Class
