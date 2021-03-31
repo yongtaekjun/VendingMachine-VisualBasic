@@ -9,55 +9,67 @@
 
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Items.Add(New Item("A1", "CocaCola 01", 1.25))
-        Items.Add(New Item("A2", "CocaCola 02", 1.26))
-        Items.Add(New Item("A3", "CocaCola 03", 1.27))
-        Items.Add(New Item("A4", "CocaCola 04", 1.28))
+        'Items.Add(New Item("A1", "CocaCola 01", 1.25))
+        'Items.Add(New Item("A2", "CocaCola 02", 1.26))
+        'Items.Add(New Item("A3", "CocaCola 03", 1.27))
+        'Items.Add(New Item("A4", "CocaCola 04", 1.28))
 
-        Items.Add(New Item("B1", "Lays 01", 1.35))
-        Items.Add(New Item("B2", "Lays 02", 1.36))
-        Items.Add(New Item("B3", "Lays 03", 1.37))
-        Items.Add(New Item("B4", "Lays 04", 1.38))
+        'Items.Add(New Item("B1", "Lays 01", 1.35))
+        'Items.Add(New Item("B2", "Lays 02", 1.36))
+        'Items.Add(New Item("B3", "Lays 03", 1.37))
+        'Items.Add(New Item("B4", "Lays 04", 1.38))
 
-        Items.Add(New Item("C1", "Jjangkoo 01", 2.25))
-        Items.Add(New Item("C2", "Jjangkoo 02", 2.26))
-        Items.Add(New Item("C3", "Jjangkoo 03", 2.27))
-        Items.Add(New Item("C4", "Jjangkoo 04", 2.28))
+        'Items.Add(New Item("C1", "Jjangkoo 01", 2.25))
+        'Items.Add(New Item("C2", "Jjangkoo 02", 2.26))
+        'Items.Add(New Item("C3", "Jjangkoo 03", 2.27))
+        'Items.Add(New Item("C4", "Jjangkoo 04", 2.28))
 
-        Items.Add(New Item("D1", "Doritos 01", 1.55))
-        Items.Add(New Item("D2", "Doritos 02", 1.56))
-        Items.Add(New Item("D3", "Doritos 03", 1.57))
-        Items.Add(New Item("D4", "Doritos 04", 1.58))
+        'Items.Add(New Item("D1", "Doritos 01", 1.55))
+        'Items.Add(New Item("D2", "Doritos 02", 1.56))
+        'Items.Add(New Item("D3", "Doritos 03", 1.57))
+        'Items.Add(New Item("D4", "Doritos 04", 1.58))
 
-        Items2(0, 0) = New Item("D4", "Doritos 04", 1.58)
-        Items2(0, 0) = New Item("D4", "Doritos 04", 1.58)
-        Items2(0, 0) = New Item("D4", "Doritos 04", 1.58)
-        Items2(0, 0) = New Item("D4", "Doritos 04", 1.58)
-        Items2(0, 0) = New Item("D4", "Doritos 04", 1.58)
-        Items2(0, 0) = New Item("D4", "Doritos 04", 1.58)
-        Items2(0, 0) = New Item("D4", "Doritos 04", 1.58)
-        Items2(0, 0) = New Item("D4", "Doritos 04", 1.58)
-        Items2(0, 0) = New Item("D4", "Doritos 04", 1.58)
-        Items2(0, 0) = New Item("D4", "Doritos 04", 1.58)
-        Items2(0, 0) = New Item("D4", "Doritos 04", 1.58)
-        Items2(0, 0) = New Item("D4", "Doritos 04", 1.58)
-        Items2(0, 0) = New Item("D4", "Doritos 04", 1.58)
-        Items2(0, 0) = New Item("D4", "Doritos 04", 1.58)
+        'Items2 = 
+        For i As UInt16 = 0 To 3 Step 1
+            For j As UInt16 = 0 To 3 Step 1
+                Select Case i
+                    Case 0
+                        Items2(i, j) = New Item("A" & j + 1, "Item " & i & j, 1.25)
+                    Case 1
+                        Items2(i, j) = New Item("B" & j + 1, "Item " & i & j, 1.5)
+                    Case 2
+                        Items2(i, j) = New Item("C" & j + 1, "Item " & i & j, 2.25)
+                    Case 3
+                        Items2(i, j) = New Item("D" & j + 1, "Item " & i & j, 1.75)
+                End Select
+                Items2(i, j).lbDescription.Name = "lb" & i & j
+                Items2(i, j).Sold(0)
+                Items2(i, j).lbDescription.Size = New Size(60, 20)
+                Items2(i, j).lbDescription.BackColor = Color.Yellow
+                'Items2(i, j).lbDescription.Visible = True
+                'Items2(i, j).lbDescription.BringToFront()
 
-        For i As UInt16 = 0 To 4 Step 1
-            For j As UInt16 = 0 To 4 Step 1
-                lbItems(i, j) = New Label
-                lbItems(i, j).Name = "lb" & i & j
-                lbItems(i, j).Text = "TEXT" & i & j
-                lbItems(i, j).Location = New Point(10 + 30 * i, 10 + 20 * j)
+                Items2(i, j).lbDescription.Location = New Point(10 + 65 * i, 80 + 90 * j)
+                Me.Controls.Add(Items2(i, j).lbDescription)
+
             Next
         Next
+        'For i As UInt16 = 0 To 3 Step 1
+        '    For j As UInt16 = 0 To 3 Step 1
+        '        lbItems(i, j) = New Label
+        '        lbItems(i, j).Name = "lb" & i & j
+        '        lbItems(i, j).Text = "TEXT" & i & j
+        '        lbItems(i, j).Size = New Size(50, 18)
+        '        lbItems(i, j).BackColor = Color.Yellow
+        '        lbItems(i, j).Visible = True
+        '        lbItems(i, j).BringToFront()
 
-        'lbItems(0, 0) = New Label
-        'lbItems(0, 0).Name = "lb" & 0 & 0
-        'lbItems(0, 1) = New Label
-        'lbItems(0, 1).Name = "lb" & 0 & 1
-        'lbItems(0, 0).Text = "Label1"
+        '        lbItems(i, j).Location = New Point(10 + 65 * i, 80 + 80 * j)
+        '        Me.Controls.Add(lbItems(i, j))
+
+        '    Next
+        'Next
+
 
     End Sub
 
@@ -95,7 +107,10 @@
 
     Private Sub OrderButtonClicked(sender As Object, e As EventArgs) Handles btnA.Click,
         btnB.Click, btnC.Click, btnD.Click, btn1.Click, btn2.Click, btn3.Click, btn4.Click
-        OrderProcessing((CType(sender, Button)).Text)
+        ' If btnA Then pass btnA.Text
+        ' If btn3 Then pass btn3.Text 
+        'OrderProcessing((CType(sender, Button)).Text)
+        OrderProcessing2((CType(sender, Button)).Text)
     End Sub
 
     'Private Sub btnA_Click(sender As Object, e As EventArgs) Handles btnA.Click
@@ -122,6 +137,80 @@
     'Private Sub btn4_Click(sender As Object, e As EventArgs) Handles btn4.Click
     '    OrderProcessing((CType(sender, Button)).Text)
     'End Sub
+    Public Sub DisplayMessage(ByVal NewMessage As String)
+        tbMessage.Text += NewMessage
+    End Sub
+    Public Enum TransactionCode As UInt16
+        Success = 0
+        NotEnoughMoney = 1
+        NotEnoughItems = 2
+        WrongOrderCode = 3
+        Processing = 4
+    End Enum
+    Private Sub OrderProcessing2(ByVal ButtonCode As Char)
+
+        sOrderCode &= ButtonCode
+
+        ' Check if order code has two character or not 
+        If sOrderCode.Length < 2 Then 'not second button pressed
+            Return
+        End If
+
+        ' the index of matched item
+        Dim xCode As UInt16 = 0
+        Dim yCode As UInt16 = 0
+
+        ' Input order code has two character
+        Dim OrderedItem As Order = New Order
+        Dim isCorrectOrder As Boolean = False
+        Dim TransactionStatus As TransactionCode = TransactionCode.Processing
+
+        For i As UInt16 = 0 To 3 Step 1
+            For j As UInt16 = 0 To 3 Step 1
+                If Not sOrderCode.Contains(Items2(i, j).Code) Then 'If the item code not match 
+                    Continue For
+                End If
+
+                ' Found the matched item!
+                xCode = i
+                yCode = j
+                ' Check the amount of item is enough
+                If Items2(i, j).Amount <= 0 Then
+                    TransactionStatus = TransactionCode.NotEnoughItems
+                    Exit For
+                End If
+                ' Check the balance is good enough
+                If sngBalance < Items2(i, j).Price Then
+                    TransactionStatus = TransactionCode.NotEnoughMoney
+                    Exit For
+                End If
+                TransactionStatus = TransactionCode.Success
+                Update_Balance(-(Items2(i, j).Price)) 'Because the balance must be changed
+                Items2(i, j).Sold(-1) 'The amount of item decreased by one.
+
+            Next
+            If Not TransactionStatus = TransactionCode.Processing Then
+                Exit For
+            End If
+        Next
+        'When the code is not found after searching
+        If TransactionStatus = TransactionCode.Processing Then
+            TransactionStatus = TransactionCode.WrongOrderCode
+        End If
+
+        Select Case TransactionStatus
+            Case TransactionCode.WrongOrderCode
+                DisplayMessage(sOrderCode & " : You pressed Wrong Button!" & ControlChars.CrLf)
+            Case TransactionCode.NotEnoughItems
+                DisplayMessage(sOrderCode & " : The Item is empty!" & ControlChars.CrLf)
+            Case TransactionCode.NotEnoughMoney
+                DisplayMessage(sOrderCode & " : The Balance is not enough!" & ControlChars.CrLf)
+            Case TransactionCode.Success
+                DisplayMessage(Items2(xCode, yCode).Title & " : Purchased !" & ControlChars.CrLf)
+        End Select
+
+        sOrderCode = ""
+    End Sub
     Private Sub OrderProcessing(ByVal ButtonCode As Char)
 
         sOrderCode &= ButtonCode

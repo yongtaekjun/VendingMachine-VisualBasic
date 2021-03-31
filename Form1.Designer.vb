@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Form1
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Form1
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -44,7 +44,6 @@ Partial Class Form1
         Me.btn1 = New System.Windows.Forms.Button()
         Me.tbMessage = New System.Windows.Forms.TextBox()
         Me.lbOrder = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbQuater, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbLoonie, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -62,6 +61,7 @@ Partial Class Form1
         Me.PictureBox1.Size = New System.Drawing.Size(336, 520)
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
+        Me.PictureBox1.Visible = False
         '
         'lbBalance
         '
@@ -271,22 +271,12 @@ Partial Class Form1
         Me.lbOrder.TabIndex = 28
         Me.lbOrder.Text = "Order"
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(22, 105)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(51, 17)
-        Me.Label1.TabIndex = 29
-        Me.Label1.Text = "Label1"
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Navy
         Me.ClientSize = New System.Drawing.Size(529, 774)
-        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.lbOrder)
         Me.Controls.Add(Me.tbMessage)
         Me.Controls.Add(Me.btn4)
@@ -343,5 +333,4 @@ Partial Class Form1
     Protected WithEvents lbDollarSign As Label
     Friend WithEvents tbMessage As TextBox
     Protected WithEvents lbOrder As Label
-    Friend WithEvents Label1 As Label
 End Class
