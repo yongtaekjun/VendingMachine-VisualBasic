@@ -24,10 +24,6 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.btn100_00 = New System.Windows.Forms.Button()
-        Me.btn125_10 = New System.Windows.Forms.Button()
-        Me.btn150_20 = New System.Windows.Forms.Button()
-        Me.btn200_30 = New System.Windows.Forms.Button()
         Me.lbBalance = New System.Windows.Forms.Label()
         Me.pbQuater = New System.Windows.Forms.PictureBox()
         Me.pbLoonie = New System.Windows.Forms.PictureBox()
@@ -48,6 +44,7 @@ Partial Class Form1
         Me.btn1 = New System.Windows.Forms.Button()
         Me.tbMessage = New System.Windows.Forms.TextBox()
         Me.lbOrder = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbQuater, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbLoonie, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -65,50 +62,6 @@ Partial Class Form1
         Me.PictureBox1.Size = New System.Drawing.Size(336, 520)
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
-        '
-        'btn100_00
-        '
-        Me.btn100_00.BackColor = System.Drawing.Color.Crimson
-        Me.btn100_00.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btn100_00.Location = New System.Drawing.Point(22, 110)
-        Me.btn100_00.Name = "btn100_00"
-        Me.btn100_00.Size = New System.Drawing.Size(65, 27)
-        Me.btn100_00.TabIndex = 1
-        Me.btn100_00.Text = " $ 1.00"
-        Me.btn100_00.UseVisualStyleBackColor = False
-        '
-        'btn125_10
-        '
-        Me.btn125_10.BackColor = System.Drawing.Color.Purple
-        Me.btn125_10.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btn125_10.Location = New System.Drawing.Point(22, 212)
-        Me.btn125_10.Name = "btn125_10"
-        Me.btn125_10.Size = New System.Drawing.Size(65, 27)
-        Me.btn125_10.TabIndex = 2
-        Me.btn125_10.Text = " $ 1.25"
-        Me.btn125_10.UseVisualStyleBackColor = False
-        '
-        'btn150_20
-        '
-        Me.btn150_20.BackColor = System.Drawing.Color.Yellow
-        Me.btn150_20.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.btn150_20.Location = New System.Drawing.Point(22, 313)
-        Me.btn150_20.Name = "btn150_20"
-        Me.btn150_20.Size = New System.Drawing.Size(65, 27)
-        Me.btn150_20.TabIndex = 3
-        Me.btn150_20.Text = " $ 1.50"
-        Me.btn150_20.UseVisualStyleBackColor = False
-        '
-        'btn200_30
-        '
-        Me.btn200_30.BackColor = System.Drawing.Color.LimeGreen
-        Me.btn200_30.ForeColor = System.Drawing.Color.Blue
-        Me.btn200_30.Location = New System.Drawing.Point(22, 412)
-        Me.btn200_30.Name = "btn200_30"
-        Me.btn200_30.Size = New System.Drawing.Size(65, 27)
-        Me.btn200_30.TabIndex = 4
-        Me.btn200_30.Text = " $ 2.00"
-        Me.btn200_30.UseVisualStyleBackColor = False
         '
         'lbBalance
         '
@@ -318,12 +271,22 @@ Partial Class Form1
         Me.lbOrder.TabIndex = 28
         Me.lbOrder.Text = "Order"
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(22, 105)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(51, 17)
+        Me.Label1.TabIndex = 29
+        Me.Label1.Text = "Label1"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Navy
         Me.ClientSize = New System.Drawing.Size(529, 774)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.lbOrder)
         Me.Controls.Add(Me.tbMessage)
         Me.Controls.Add(Me.btn4)
@@ -344,10 +307,6 @@ Partial Class Form1
         Me.Controls.Add(Me.pbLoonie)
         Me.Controls.Add(Me.pbQuater)
         Me.Controls.Add(Me.lbBalance)
-        Me.Controls.Add(Me.btn200_30)
-        Me.Controls.Add(Me.btn150_20)
-        Me.Controls.Add(Me.btn125_10)
-        Me.Controls.Add(Me.btn100_00)
         Me.Controls.Add(Me.PictureBox1)
         Me.Name = "Form1"
         Me.Text = "Vending Machine"
@@ -364,10 +323,6 @@ Partial Class Form1
     End Sub
 
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents btn100_00 As Button
-    Friend WithEvents btn125_10 As Button
-    Friend WithEvents btn150_20 As Button
-    Friend WithEvents btn200_30 As Button
     Friend WithEvents lbBalance As Label
     Friend WithEvents pbQuater As PictureBox
     Friend WithEvents pbLoonie As PictureBox
@@ -388,4 +343,5 @@ Partial Class Form1
     Protected WithEvents lbDollarSign As Label
     Friend WithEvents tbMessage As TextBox
     Protected WithEvents lbOrder As Label
+    Friend WithEvents Label1 As Label
 End Class

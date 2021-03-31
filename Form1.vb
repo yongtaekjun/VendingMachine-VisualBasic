@@ -1,10 +1,11 @@
 ﻿Public Class Form1
     Public sngBalance As Single = 0.0
     Public dOrderAmount As Double = 0.0
-    'Public OrderCode As Integer = 0
     Public sOrderCode As String = ""
     Public OrderHistory As New List(Of Order)
     Public Items As New List(Of Item)
+    Public Items2(4, 4) As Item
+    Public lbItems(4, 4) As Label
 
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -28,82 +29,102 @@
         Items.Add(New Item("D3", "Doritos 03", 1.57))
         Items.Add(New Item("D4", "Doritos 04", 1.58))
 
+        Items2(0, 0) = New Item("D4", "Doritos 04", 1.58)
+        Items2(0, 0) = New Item("D4", "Doritos 04", 1.58)
+        Items2(0, 0) = New Item("D4", "Doritos 04", 1.58)
+        Items2(0, 0) = New Item("D4", "Doritos 04", 1.58)
+        Items2(0, 0) = New Item("D4", "Doritos 04", 1.58)
+        Items2(0, 0) = New Item("D4", "Doritos 04", 1.58)
+        Items2(0, 0) = New Item("D4", "Doritos 04", 1.58)
+        Items2(0, 0) = New Item("D4", "Doritos 04", 1.58)
+        Items2(0, 0) = New Item("D4", "Doritos 04", 1.58)
+        Items2(0, 0) = New Item("D4", "Doritos 04", 1.58)
+        Items2(0, 0) = New Item("D4", "Doritos 04", 1.58)
+        Items2(0, 0) = New Item("D4", "Doritos 04", 1.58)
+        Items2(0, 0) = New Item("D4", "Doritos 04", 1.58)
+        Items2(0, 0) = New Item("D4", "Doritos 04", 1.58)
+
+        For i As UInt16 = 0 To 4 Step 1
+            For j As UInt16 = 0 To 4 Step 1
+                lbItems(i, j) = New Label
+                lbItems(i, j).Name = "lb" & i & j
+                lbItems(i, j).Text = "TEXT" & i & j
+                lbItems(i, j).Location = New Point(10 + 30 * i, 10 + 20 * j)
+            Next
+        Next
+
+        'lbItems(0, 0) = New Label
+        'lbItems(0, 0).Name = "lb" & 0 & 0
+        'lbItems(0, 1) = New Label
+        'lbItems(0, 1).Name = "lb" & 0 & 1
+        'lbItems(0, 0).Text = "Label1"
 
     End Sub
 
     Private Sub pbLoonie_Click(sender As Object, e As EventArgs) Handles pbLoonie.Click
-        sngBalance += 1.0
-        Update_Balance()
+        Update_Balance(1.0)
     End Sub
 
     Private Sub pbToonie_Click(sender As Object, e As EventArgs) Handles pbToonie.Click
-        sngBalance += 2.0
-        Update_Balance()
+        Update_Balance(2.0)
     End Sub
 
     Private Sub pbQuater_Click(sender As Object, e As EventArgs) Handles pbQuater.Click
-        sngBalance += 0.25
-        Update_Balance()
+        Update_Balance(0.25)
 
     End Sub
     Private Sub pbDime_Click(sender As Object, e As EventArgs) Handles pbDime.Click
-        sngBalance += 0.1
-        Update_Balance()
+        Update_Balance(0.1)
 
     End Sub
     Private Sub pbNickle_Click(sender As Object, e As EventArgs) Handles pbNickle.Click
-        sngBalance += 0.05
-        Update_Balance()
+        Update_Balance(0.05)
 
     End Sub
 
     Private Sub pbPenny_Click(sender As Object, e As EventArgs) Handles pbPenny.Click
-        sngBalance += 0.01
-        Update_Balance()
+        Update_Balance(0.01)
 
     End Sub
-    Private Sub Update_Balance()
+    Private Sub Update_Balance(ByVal _price As Single)
         'to show the balance to Label
+        sngBalance += _price
         lbBalance.Text = sngBalance.ToString("n2") 'to change number format 1234.5678 -> 1234.56
 
     End Sub
 
+    Private Sub OrderButtonClicked(sender As Object, e As EventArgs) Handles btnA.Click,
+        btnB.Click, btnC.Click, btnD.Click, btn1.Click, btn2.Click, btn3.Click, btn4.Click
+        OrderProcessing((CType(sender, Button)).Text)
+    End Sub
 
-    Private Sub btnA_Click(sender As Object, e As EventArgs) Handles btnA.Click
-        OrderButton_Click("A")
-    End Sub
-    Private Sub btnB_Click(sender As Object, e As EventArgs) Handles btnB.Click
-        OrderButton_Click("B")
-    End Sub
-    Private Sub btnC_Click(sender As Object, e As EventArgs) Handles btnC.Click
-        OrderButton_Click("C")
-    End Sub
-    Private Sub btnD_Click(sender As Object, e As EventArgs) Handles btnD.Click
-        OrderButton_Click("D")
-    End Sub
-    Private Sub btn1_Click(sender As Object, e As EventArgs) Handles btn1.Click
-        OrderButton_Click("1")
-    End Sub
-    Private Sub btn2_Click(sender As Object, e As EventArgs) Handles btn2.Click
-        OrderButton_Click("2")
-    End Sub
-    Private Sub btn3_Click(sender As Object, e As EventArgs) Handles btn3.Click
-        OrderButton_Click("3")
-    End Sub
-    Private Sub btn4_Click(sender As Object, e As EventArgs) Handles btn4.Click
-        OrderButton_Click("4")
-    End Sub
-    Private Sub OrderButton_Click(ByVal ButtonCode As Char)
-        'For Each theGalaxy In Items
-        '    With theGalaxy
-        '        lbMessage.Text += .Code & "  " & .Title & ControlChars.CrLf
-        '    End With
-        'Next
-        'Return
+    'Private Sub btnA_Click(sender As Object, e As EventArgs) Handles btnA.Click
+    '    OrderProcessing((CType(sender, Button)).Text)
+    'End Sub
+    'Private Sub btnB_Click(sender As Object, e As EventArgs) Handles btnB.Click
+    '    OrderProcessing((CType(sender, Button)).Text)
+    'End Sub
+    'Private Sub btnC_Click(sender As Object, e As EventArgs) Handles btnC.Click
+    '    OrderProcessing((CType(sender, Button)).Text)
+    'End Sub
+    'Private Sub btnD_Click(sender As Object, e As EventArgs) Handles btnD.Click
+    '    OrderProcessing((CType(sender, Button)).Text)
+    'End Sub
+    'Private Sub btn1_Click(sender As Object, e As EventArgs) Handles btn1.Click
+    '    OrderProcessing((CType(sender, Button)).Text)
+    'End Sub
+    'Private Sub btn2_Click(sender As Object, e As EventArgs) Handles btn2.Click
+    '    OrderProcessing((CType(sender, Button)).Text)
+    'End Sub
+    'Private Sub btn3_Click(sender As Object, e As EventArgs) Handles btn3.Click
+    '    OrderProcessing((CType(sender, Button)).Text)
+    'End Sub
+    'Private Sub btn4_Click(sender As Object, e As EventArgs) Handles btn4.Click
+    '    OrderProcessing((CType(sender, Button)).Text)
+    'End Sub
+    Private Sub OrderProcessing(ByVal ButtonCode As Char)
 
         sOrderCode &= ButtonCode
-
-
 
         ' Check if order code has two character or not 
         If sOrderCode.Length <> 2 Then 'not second button pressed
@@ -116,14 +137,24 @@
 
         For Each item In Items
             With item
+                'Must find item.code first 
                 If Not sOrderCode.Contains(.Code) Then 'If the item code not match 
                     Continue For
+                End If
+
+                ' Check the inventory is good enough
+                If .Amount <= 0 Then
+                    tbMessage.Text = tbMessage.Text & "Not enough inventory! : " & sOrderCode & ControlChars.CrLf
+                    Exit For
                 End If
                 ' Check the balance is good enough
                 If sngBalance < .Price Then
                     tbMessage.Text = tbMessage.Text & "Not enough money! : " & sOrderCode & ControlChars.CrLf
                     Exit For
                 End If
+
+                ' Now we have correct code and balance ^^
+                isCorrectOrder = True
 
                 'tbMessage.Text = tbMessage.Text & .Title & ControlChars.Tab & .Price & ControlChars.Tab
                 tbMessage.Text = tbMessage.Text & .Title & ControlChars.Tab & "$" & .Price & ControlChars.Tab
@@ -134,10 +165,11 @@
 
                 tbMessage.Text = tbMessage.Text & " Purchased!" & ControlChars.CrLf
                 'tbMessage.Text = tbMessage.Text & " Purchased!"
-                sngBalance -= .Price
 
-                isCorrectOrder = True
-                Update_Balance() 'Because the balance changed
+
+                Update_Balance(-(.Price)) 'Because the balance must be changed
+                item.Amount -= 1 'The amount of item decreased by one.
+
                 Exit For
             End With
         Next
@@ -147,55 +179,6 @@
         End If
         sOrderCode = ""
         Return
-        'Select Case True
-        '    Case sOrderCode.Contains("A1")
-        '        lbMessage.Text = lbMessage.Text & "A1"
-        '        dOrderAmount += 1.25
-        '        'OrderedItem.OrderCode = sOrderCode
-        '        'OrderedItem.iAmount = 1.25
-        '        OrderHistory.Add(OrderedItem)
-        '    Case sOrderCode.Contains("A2")
-        '        lbMessage.Text = lbMessage.Text & "A2"
-        '        dOrderAmount += 1.5
-        '    Case sOrderCode.Contains("A3")
-        '        lbMessage.Text = lbMessage.Text & "A3"
-        '    Case sOrderCode.Contains("A4")
-        '        lbMessage.Text = lbMessage.Text & "A4"
-
-
-        '    Case sOrderCode.Contains("B1")
-        '        lbMessage.Text = lbMessage.Text & "B1"
-        '    Case sOrderCode.Contains("B2")
-        '        lbMessage.Text = lbMessage.Text & "B2"
-        '    Case sOrderCode.Contains("B3")
-        '        lbMessage.Text = lbMessage.Text & "B3"
-        '    Case sOrderCode.Contains("B4")
-        '        lbMessage.Text = lbMessage.Text & "B4"
-
-        '    Case sOrderCode.Contains("C1")
-        '        lbMessage.Text = lbMessage.Text & "C1"
-        '    Case sOrderCode.Contains("C2")
-        '        lbMessage.Text = lbMessage.Text & "C2"
-        '    Case sOrderCode.Contains("C3")
-        '        lbMessage.Text = lbMessage.Text & "C3"
-        '    Case sOrderCode.Contains("C4")
-        '        lbMessage.Text = lbMessage.Text & "C4"
-
-        '    Case sOrderCode.Contains("D1")
-        '        lbMessage.Text = lbMessage.Text & "D1"
-        '    Case sOrderCode.Contains("D2")
-        '        lbMessage.Text = lbMessage.Text & "D2"
-        '    Case sOrderCode.Contains("D3")
-        '        lbMessage.Text = lbMessage.Text & "D3"
-        '    Case sOrderCode.Contains("D4")
-        '        lbMessage.Text = lbMessage.Text & "D4"
-        '    Case Else
-        '        lbMessage.Text = lbMessage.Text & "Wrong Code: " & sOrderCode
-        'End Select
-        'lbMessage.Text = lbMessage.Text & " Selected!" & ControlChars.CrLf
-        'sngBalance -= dOrderAmount
-
-        'sOrderCode = ""
     End Sub
 
     Private Sub btnStop_Click(sender As Object, e As EventArgs) Handles btnStop.Click
@@ -207,6 +190,7 @@
         Dim iReturnDime As Int16 = 0
         Dim iReturnNickle As Int16 = 0
         Dim iReturnPenny As Int16 = 0
+        Dim iCoinAmount As Int16 = 0
 
         ' need to round the Single value 
         ' because I want the result 2.00 / 2 = 1 instead of 1.999999998 /2.0 = 0
@@ -235,7 +219,7 @@
 
         iReturnPenny = Math.Truncate(sngBalance / 0.01)
         sngBalance = Math.Round(sngBalance Mod 0.01, 2)
-        Update_Balance()
+        Update_Balance(0.0)
 
         tbMessage.Text = tbMessage.Text & "Returned :" & ControlChars.CrLf
 
